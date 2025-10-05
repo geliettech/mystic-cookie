@@ -11,7 +11,7 @@ function App() {
     const data = await res.json();
 
     console.log(data);
-    setText(data);
+    setText(data.slip);
   };
 
   useEffect(() => {
@@ -20,8 +20,8 @@ function App() {
 
   return (
     <div>
-      <h1>Advice #{text?.slip?.id}</h1>
-      <p>{text?.slip?.advice}</p>
+      <h1>Advice #{text.id}</h1>
+      <p>{text.advice}</p>
       <picture>
         <source media="(min-width: 768px)" srcSet={pauseDesktop} />
         <img src={pauseMobile} alt="" />
